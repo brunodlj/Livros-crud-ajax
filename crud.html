@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+    <!-- Barra de Navegação -->
+    <nav class="navbar ligth blue">
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo"> LIVROS</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="crud.html">CRUD</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <h1 >CRUD - Livros</h1>
+        <br>
+        <form onsubmit="return salvarUsuario(event);">
+            <input type="number" name="id" hidden>
+            
+            <div class="input-field col s12">
+                <input id="titulo" type="text" class="validate" name="titulo" pattern="[A-Za-zÀ-ÖØ-öø-ÿ0-9\s]+" required>
+               <label for="titulo">Titulo</label>
+               <span class="helper-text" data-error="Preencha o campo com letras ou números apenas."> </span>
+              </div>
+
+              <div class="input-field col s12">
+                <input  id="categoria" type="text" class="validate" name="categoria" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" required>
+               <label for="categoria">Categoria</label>
+               <span class="helper-text" data-error="Preencha o campo com letras."> </span>
+              </div>
+
+              <div class="input-field col s12">
+                <input  id="autor" type="text" class="validate" name="autor" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" required>
+               <label for="autor">Autor</label>
+               <span class="helper-text" data-error="Preencha o campo apenas com letras."> </span>
+              </div>
+
+
+
+            <input type="submit" class="botao" value="Salvar Livro">
+
+
+        </form>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Titulo</th>
+                    <th>Categoria</th>
+                    <th>Autor</th>
+                    <th colspan="2">Opções</th>
+                </tr>
+            </thead>
+            <tbody id="livros"></tbody>
+        </table><br>
+
+        <a href='relatorio.php' class="ligth blue waves-effect waves-light btn"><i class="material-icons right">add</i>Gerar
+            relatório</a>
+        <table class="highlight">
+    </main>
+
+
+
+    <script src="script.js"></script>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>
